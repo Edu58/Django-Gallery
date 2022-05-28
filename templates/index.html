@@ -41,7 +41,7 @@
                         Category: {{ image.category.name }} <br>
                         Location: {{ image.location.name }} <br>
                         Posted on: {{ image.posted_on }} <br>
-                        <button type="button" class="btn btn-sm text-light" id="copy">copy link</button>
+                        <button type="button" class="btn btn-sm text-light" onclick="copy_url('{{ image.image.url }}')" id="copy">copy link</button>
                     </div>
                 </div>
             </div>
