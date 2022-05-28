@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Categories, Locations, Images
 
 
@@ -8,6 +8,10 @@ def home(request):
     return render(request, 'index.html', {'all_images': all_images})
 
 
-def search_by_category(request, category_name):
-    images = Images.search_image(category_name)
-    return render(request, 'search.html', {'images': images})
+def search_by_category(request):
+    if request.method == 'POST':
+        category = request.POST.get('category')
+        print(category)
+        all_images = Images.search_image(category)
+        return render(request, 'index.html', {'all_images': all_images})
+    return redirect('/home/')
