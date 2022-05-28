@@ -1,6 +1,6 @@
 from django.db import models
 from django.http import Http404
-from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import get_object_or_404
 
 
 # Create your models here.
@@ -43,7 +43,14 @@ class Images(models.Model):
 
     @classmethod
     def delete_image(cls, image_id):
-        try:
-            cls.objects.filter(id=image_id).delete()
-        except ObjectDoesNotExist:
-            raise Http404
+        image_to_delete = get_object_or_404(cls, id=image_id)
+        image_to_delete.delete()
+
+    @classmethod
+    def update_image(cls, image_id):
+        pass
+
+    @classmethod
+    def get_image_by_id(cls, image_id):
+        image = get_object_or_404(cls, id=image_id)
+        return image
