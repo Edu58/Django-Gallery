@@ -5,9 +5,15 @@ from django.db import models
 class Categories(models.Model):
     name = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.name
+
 
 class Locations(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 
 class Images(models.Model):
@@ -16,3 +22,6 @@ class Images(models.Model):
     image = models.ImageField(null=False, blank=False, upload_to='images/')
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     location = models.ForeignKey(Locations, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
