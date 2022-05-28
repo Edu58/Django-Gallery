@@ -37,6 +37,12 @@
                 </div>
                 <div class="modal-body">
                     {{ image.description }}
+                    
+                    <div class="mt-4">
+                        Category: {{ image.category.name }} <br>
+                        Location: {{ image.location.name }} <br>
+                        Posted on: {{ image.posted_on }}
+                    </div>
                 </div>
             </div>
         </div>
