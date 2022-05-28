@@ -12,6 +12,7 @@
 
     {% block styles %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'base.css' %}">
     {% endblock styles %}
 
     <title>
@@ -22,8 +23,12 @@
 
 </head>
 <body>
-{% block content %}
-{% endblock content %}
+{% include 'navbar.html' %}
+
+<div class="container" style="margin-top: 5rem;">
+    {% block content %}
+    {% endblock content %}
+</div>
 
 
 {# Load Javascript #}
