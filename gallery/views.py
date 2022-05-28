@@ -11,7 +11,6 @@ def home(request):
 def search_by_category(request):
     if request.method == 'POST':
         category = request.POST.get('category')
-        print(category)
-        all_images = Images.search_image(category)
+        all_images = Images.search_image(category.capitalize())
         return render(request, 'index.html', {'all_images': all_images})
     return redirect('/home/')
