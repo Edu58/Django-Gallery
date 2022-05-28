@@ -9,6 +9,9 @@ class Categories(models.Model):
         ('Nature', 'Nature'),
         ('Vehicles', 'Vehicles'),
         ('People', 'People'),
+        ('Travel', 'Travel'),
+        ('Food', 'Food'),
+        ('People', 'People'),
         ('Sky', 'Sky'),
         ('Animals', 'Animals'),
     ]
