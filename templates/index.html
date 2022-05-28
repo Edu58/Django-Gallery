@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'navbar.css' %}">
+{% endblock styles %}
 
 {% block content %}
-<h1>Hello</h1>
+{% include 'navbar.html' %}
 {% endblock content %}
