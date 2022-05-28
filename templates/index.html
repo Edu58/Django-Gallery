@@ -8,7 +8,6 @@
 
 {% block content %}
 
-{% if all_images %}
 <!-- Gallery -->
 <div class="row">
     {% for image in all_images %}
@@ -16,7 +15,7 @@
         <img
                 src="{{ image.image.url }}"
                 class="w-100 shadow-1-strong rounded mb-4 img-fluid image"
-                alt="Boat on Calm Water"
+                alt="{{ image.name }}"
                 style="max-height: 30rem; width: auto;"
         />
         <div class="details position-absolute" id="details">
@@ -47,15 +46,13 @@
             </div>
         </div>
     </div>
+    {% empty %}
+    <div class="alert alert-warning text-center" role="alert">
+        Oops, seems there are no images   
+    </div>
     {% endfor %}
 </div>
 <!-- Gallery -->
-
-{% else %}
-<div class="alert alert-danger" role="alert">
-   Currently there are no images
-</div>
-{% endif %}
 
 {% block scripts %}
 {{ block.super }}

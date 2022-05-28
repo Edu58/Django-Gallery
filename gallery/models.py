@@ -67,15 +67,9 @@ class Images(models.Model):
     @classmethod
     def search_image(cls, category):
         images = Images.objects.filter(category__name=category)
-        if len(images) == 0:
-            return 'Category does no exist'
-        else:
-            return images
+        return images
 
     @classmethod
     def filter_by_location(cls, location):
         images = Images.objects.filter(location__name=location)
-        if len(images) == 0:
-            return 'No images from that location'
-        else:
-            return images
+        return images
