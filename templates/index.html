@@ -10,14 +10,14 @@
 <!-- Gallery -->
 <div class="row">
     {% for image in all_images %}
-    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 position-relative">
+    <div class="image-card col-lg-6 col-md-12 mb-4 mb-lg-0 position-relative">
         <img
                 src="{{ image.image.url }}"
-                class="w-100 shadow-1-strong rounded mb-4 img-fluid"
+                class="w-100 shadow-1-strong rounded mb-4 img-fluid image"
                 alt="Boat on Calm Water"
                 style="max-height: 30rem; width: auto;"
         />
-        <div class="details position-absolute">
+        <div class="details position-absolute" id="details">
             <p class="fs-4">{{ image.name }}</p>
             <a href=''>
                 <button class="btn text-light" type="submit">view</button>
@@ -27,4 +27,9 @@
     {% endfor %}
 </div>
 <!-- Gallery -->
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'jquery.js' %}"></script>
+{% endblock scripts %}
 {% endblock content %}
