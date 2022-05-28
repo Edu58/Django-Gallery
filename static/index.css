@@ -15,7 +15,7 @@ img.blur {
     color: rgb(48, 48, 48);
 }
 
-.row a button {
+.row .details button {
     background-color: #5e9693;
     margin-top: 15%;
 }

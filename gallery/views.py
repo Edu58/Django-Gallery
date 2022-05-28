@@ -13,4 +13,9 @@ def search_by_category(request):
         category = request.POST.get('category')
         all_images = Images.search_image(category.capitalize())
         return render(request, 'index.html', {'all_images': all_images})
-    return redirect('/home/')
+    return redirect('/')
+
+
+def get_image_details(request, image_id):
+    details = Images.get_image_by_id(image_id)
+    return redirect('/', {'details': details})
