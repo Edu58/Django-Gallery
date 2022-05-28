@@ -29,3 +29,7 @@ img.blur {
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     color: #FFF;
 }
+
+#copy {
+    background-color: #103a39;
+}
