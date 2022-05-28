@@ -44,8 +44,12 @@ class Images(models.Model):
     def save_image(self):
         self.save()
 
-    def update_image(self, image_id):
-        pass
+    def update_image(self, new_name, new_description, new_image, new_category, new_location):
+        self.image = new_image
+        self.name = new_name
+        self.location = new_location
+        self.description = new_description
+        self.category = new_category
 
     @classmethod
     def delete_image(cls, image_id):
