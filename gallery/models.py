@@ -3,7 +3,16 @@ from django.db import models
 
 # Create your models here.
 class Categories(models.Model):
-    name = models.CharField(max_length=30)
+
+    CATEGORY_CHOICES = [
+        ('Nature', 'Nature'),
+        ('Vehicles', 'Vehicles'),
+        ('People', 'People'),
+        ('Sky', 'Sky'),
+        ('Animals', 'Animals'),
+    ]
+
+    name = models.CharField(max_length=12, choices=CATEGORY_CHOICES, null=False, blank=False)
 
     def __str__(self):
         return self.name
