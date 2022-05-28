@@ -41,14 +41,13 @@ class Images(models.Model):
     def save_image(self):
         self.save()
 
+    def update_image(self, image_id):
+        pass
+
     @classmethod
     def delete_image(cls, image_id):
         image_to_delete = get_object_or_404(cls, id=image_id)
         image_to_delete.delete()
-
-    @classmethod
-    def update_image(cls, image_id):
-        pass
 
     @classmethod
     def get_image_by_id(cls, image_id):
@@ -60,5 +59,13 @@ class Images(models.Model):
         images = Images.objects.filter(category__name=category)
         if len(images) == 0:
             return 'Category does no exist'
+        else:
+            return images
+
+    @classmethod
+    def filter_by_location(cls, location):
+        images = Images.objects.filter(location__name=location)
+        if len(images) == 0:
+            return 'No images from that location'
         else:
             return images
