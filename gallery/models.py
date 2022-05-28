@@ -54,3 +54,11 @@ class Images(models.Model):
     def get_image_by_id(cls, image_id):
         image = get_object_or_404(cls, id=image_id)
         return image
+
+    @classmethod
+    def search_image(cls, category):
+        images = Images.objects.filter(category__name=category)
+        if len(images) == 0:
+            return 'Category does no exist'
+        else:
+            return images
