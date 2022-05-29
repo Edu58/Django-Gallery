@@ -80,9 +80,6 @@ DATABASES = {
         'NAME': 'django-gallery',
         'USER': 'ed',
         'PASSWORD': 'ed',
-        # 'TEST': {
-        #     'NAME': 'test-django-gallery'
-        # }
     }
 }
 
